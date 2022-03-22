@@ -3,6 +3,11 @@ function tabuada(){
     let fator2 = Number(prompt('Digite o número total de resultados para essa tabuada:'));
     let resultado = [];
 
+    if(isNaN(fator1) || isNaN(fator2)){
+        alert("Digite apenas números.");
+        tabuada();
+    }else{
+
     for(let i = 0; i <= fator2; i++){
         resultado[i] = fator1 * i;
 
@@ -16,6 +21,7 @@ function tabuada(){
     alert(resultadoCompleto.join(''));
 
     novaTabuada();
+    }  
 
     function novaTabuada(){
         let opcao = Number(prompt('Deseja calcular uma nova tabuada?\n1 - Sim\n2 - Não'));
